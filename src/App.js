@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback  } from 'react';
 import Todo from './Todo';
 
 import Button from 'react-bootstrap/Button';
@@ -56,10 +56,10 @@ function App() {
     setTodo(newTodos);
     document.querySelector('#todo').value = '';
   }
-  const setStorage = ()=>{
+  const setStorage = useCallback(() => {
     const todoStr = JSON.stringify(todo);
-    window.localStorage.setItem('todo',todoStr);
-  }
+    window.localStorage.setItem('todo', todoStr);
+  }, [todo]);
   useEffect(()=>{
    getTodoList();    
   },[getTodoList]); //최초 한번만 작동
