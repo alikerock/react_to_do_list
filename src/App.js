@@ -30,7 +30,7 @@ function App() {
 
   useEffect(() => {
     setStorage();
-  }, [todo]); // todo가 변경될 때마다 실행
+  }, [setStorage]); // todo가 변경될 때마다 실행
 
   const deleteTodo = (id) => {
     const newTodos = todo.filter(item => item.id !== id);
