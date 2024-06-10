@@ -62,7 +62,7 @@ function App() {
   }
   useEffect(()=>{
    getTodoList();    
-  },[setStorage]); //최초 한번만 작동
+  }); //최초 한번만 작동
 
   useEffect(()=>{
     setStorage();
