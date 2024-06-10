@@ -66,7 +66,7 @@ function App() {
 
   useEffect(()=>{
     setStorage();
-  },[todo]);//최초 한번, todo의 값이 변경되면 실행
+  },[setStorage]);//최초 한번, todo의 값이 변경되면 실행
 
   return (
     <div className="App">
